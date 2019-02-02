@@ -12,3 +12,8 @@
 [19-Jan-2019 01:07:22 America/New_York] PHP Notice:  Undefined index: total in /home/teknfayr/trivia.tekno.icu/action.php on line 33
 [19-Jan-2019 01:08:25 America/New_York] PHP Notice:  Undefined index: chat in /home/teknfayr/trivia.tekno.icu/action.php on line 28
 [19-Jan-2019 01:08:25 America/New_York] PHP Notice:  Undefined index: total in /home/teknfayr/trivia.tekno.icu/action.php on line 33
+[02-Feb-2019 11:20:33 America/New_York] PHP Notice:  Undefined index: answer in /home/tekntehf/trivia.tekno.icu/action.php on line 13
+[02-Feb-2019 11:20:33 America/New_York] PHP Notice:  Undefined index: time in /home/tekntehf/trivia.tekno.icu/action.php on line 18
+[02-Feb-2019 11:20:33 America/New_York] PHP Notice:  Undefined index: winners in /home/tekntehf/trivia.tekno.icu/action.php on line 23
+[02-Feb-2019 11:20:33 America/New_York] PHP Notice:  Undefined index: chat in /home/tekntehf/trivia.tekno.icu/action.php on line 28
+[02-Feb-2019 11:20:33 America/New_York] PHP Notice:  Undefined index: total in /home/tekntehf/trivia.tekno.icu/action.php on line 33

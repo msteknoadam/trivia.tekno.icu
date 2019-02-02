@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="cache-control" content="max-age=0">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="-1">
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 11:00:00 GMT">
+		<meta http-equiv="pragma" content="no-cache">
+		<title>TEKNO Trivia Database</title>
+		<link rel="stylesheet" href="styles.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<script type="text/javascript"> //<![CDATA[ 
+			var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+			document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</head>
+	<body>
+		<center>
+			<span id="last24TotalCoins" class="h1"></span><br />
+			<span id="allTimeTotalCoins" class="h1"></span><br />
+			<span class="h3">Please note that the shown trivias are the only ones which are made with TEKNO's TriviaBot's latest version.<br />Manual trivias & The trivias which are made before site was live/while site was offline are not(and can't be) counted.</span>
+		</center>
+		<br />
+		<div style="position: relative; display: flex;">
+			<div id="leaderboard24Div">
+				<center>
+					<span class="h3"><span 
+						onclick='
+							document.querySelector("#leaderboardAllTimeDiv").style.display = "";
+							document.querySelector("#leaderboard24Div").style.display = "none";
+						'
+						class="clickable_link"
+					>Last 24 Hours</span> Top Wins</span>
+				</center>
+				<center>
+					<div class="table_wrap">
+						<table id="leaderboard24">
+							<tr id="leaderboard24_users">
+								<th style="width: 200px"><bold>User</bold></th>
+								<th style="width: 200px"><bold>Coins Won</bold></th>
+							</tr>
+						</table>
+					</div>
+				</center>
+			</div>
+			<div id="leaderboardAllTimeDiv" style="display: none">
+				<center>
+					<span class="h3"><span 
+						onclick='
+							document.querySelector("#leaderboardAllTimeDiv").style.display = "none";
+							document.querySelector("#leaderboard24Div").style.display = "";
+						'
+						class="clickable_link"
+					>All Time</span> Top Wins</span>
+				</center>
+				<center>
+					<div class="table_wrap">
+						<table id="leaderboardAllTime">
+							<tr id="leaderboardAllTime_users">
+								<th style="width: 200px"><bold>User</bold></th>
+								<th style="width: 200px"><bold>Coins Won</bold></th>
+							</tr>
+						</table>
+					</div>
+				</center>
+			</div>
+			<br />
+			<div id="last24TriviasDiv">
+				<center>
+					<span class="h3">Trivias Made in Last 24 Hours</span>
+				</center>
+				<center>
+					<div class="table_wrap">
+						<table id="last24Trivias">
+							<tr id="last24modList"></tr>
+							<tr id="last24triviaList"></tr>
+						</table>
+					</div>
+				</center>
+			</div>
+		</div>
+		<br />
+		<center>
+			<a 
+				id="previousShow" 
+				onclick="
+					if(document.querySelector('#latestTrivias').style.display === 'none') {
+						document.querySelector('#latestTrivias').style.display = '';
+						document.querySelector('#previousShow').innerText = 'Click to hide all of the previous trivias.';
+					}
+					else {
+						document.querySelector('#latestTrivias').style.display = 'none';
+						document.querySelector('#previousShow').innerText = 'Click to show all of the previous trivias.';
+					}"
+				class="h2 clickable_link"
+			>
+				Click to show all of the previous trivias.
+			</a>
+		</center>
+		<br />
+		<center>
+			<div class="table_wrap">
+				<table id="latestTrivias" style="display: none">
+					<tr id="modList"></tr>
+					<tr id="triviaList"></tr>
+				</table>
+			</div>
+		</center>
+		<br />
+		<center>
+			<a href="https://info.flagcounter.com/SHkW"><img src="https://s11.flagcounter.com/count2/SHkW/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+		</center>
+		<script src="main.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			TrustLogo("https://trivia.tekno.icu/comodo_secure_seal_100x85_transp.png", "CL1", "none");
+		</script>
+		<a  href="https://www.positivessl.com/" id="comodoTL">Positive SSL</a>
+	</body>
+</html>

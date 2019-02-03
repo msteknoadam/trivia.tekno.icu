@@ -25,18 +25,18 @@
 		$line = $name . "-@-" . $question . "-@-" . $answer . "-@-" . $time . "-@-" . $winners . "-@-" . $chat . "-@-" . $total;
 		$lang_change = "SET NAMES utf8";
 		if (mysqli_query($conn, $lang_change)) {
-			echo "Successful: Language change.";
+			//echo "Successful: Language change.";
 		} else {
-			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			echo "Error. Please send this data to TEKNO: " . $sql . "<br>" . mysqli_error($conn);
 		}
 		$sql = "INSERT INTO trivia_data (name, question, answer, time, winners, chat, total) VALUES ('$name', '$question', '$answer', $time, '$winners', '$chat', '$total')";
 		if (mysqli_query($conn, $sql)) {
-			echo "Successful: $line";
+			echo "https://www.reddit.com/r/dataisbeautiful";
 		} else {
-			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			echo "Error. Please send this data to TEKNO: " . $sql . "<br>" . mysqli_error($conn);
 		}
 		mysqli_close($conn);
 	} else {
-		echo "Trivia data ignored.";
+		echo "Trivia data is not sent to server. You made either a mod chat trivia or cancelled/inappropriate trivia.";
 	}
 ?>

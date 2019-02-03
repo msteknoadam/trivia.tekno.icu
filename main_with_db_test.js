@@ -27,21 +27,14 @@ Number.prototype.toMoney = function(decimals, decimal_sep, thousands_sep)
 
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'trivia_data_from_db_test.php');
-
 xhr.onreadystatechange = function () {
 	var DONE = 4;
 	var OK = 200;
-	if (xhr.readyState === DONE) {
-		if (xhr.status === OK) {
-			window.trivias = xhr.responseText;
+	if (xhr.readyState === DONE) { if (xhr.status === OK) { window.trivias = xhr.responseText;
 			exportToScreen(xhr.responseText);
-		} else {
-			console.log('Error: ' + xhr.status);
-		}
+		} else console.log('Error: ' + xhr.status);
 	}
-};
-
-xhr.send(null);
+}; xhr.send(null);
 
 var loadTime = Number(new Date()),
 	todayStatsTime = loadTime - 86400000,
@@ -87,7 +80,7 @@ function exportToScreen(data) {
 						sortable.sort((a,b) => {
 							return b[1] - a[1];
 						});
-						if(trivia === trivias[trivias.length - 1]) sortedLeaderboard24Data = sortable;
+						if(trivia === trivias[trivias.length - 2]) sortedLeaderboard24Data = sortable;
 					}
 					var last24exists = false,
 						last24thIndex = 0;
@@ -175,7 +168,7 @@ function exportToScreen(data) {
 					sortable.sort((a,b) => {
 						return b[1] - a[1];
 					});
-					if(trivia === trivias[trivias.length - 1]) sortedLeaderboardAllTimeData = sortable;
+					if(trivia === trivias[trivias.length - 2]) sortedLeaderboardAllTimeData = sortable;
 					allTimeTotalCoins += Number(totalAmount);
 				}
 

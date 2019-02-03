@@ -2,7 +2,7 @@
 	header('Content-Type: text/plain; charset=UTF-8');
     $servername = "localhost";
 	$username = "tekntehf_trivias_user";
-	$password = "Fo3A4QZ)*s+d";
+	$password = "Fo3A4QZ)*s+d-";
     $dbname = "tekntehf_trivias";
     // Create connection
 	$conn = mysqli_connect($servername, $username, $password, $dbname);

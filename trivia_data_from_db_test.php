@@ -19,8 +19,7 @@
     if(! $retval ) {
        die('Could not get data: ' . mysql_error());
     }
-     . $name . "-@-" . $question . "-@-" . $answer . "-@-" . $time . "-@-" . $winners . "-@-" . $chat . "-@-" . $total;
-     while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
+    while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
          echo "\n".
             $row['name'].
             "-@-".
@@ -35,7 +34,7 @@
             $row['chat'].
             "-@-".
             $row['total'];
-     }
+    }
     
      mysql_close($conn);
     

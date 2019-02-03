@@ -1,6 +1,6 @@
 <?php
 
-    header('Content-Type: text/plain');
+    header('Content-Type: text/plain; charset=UTF-8');
     $servername = "localhost";
 	$username = "tekntehf_trivias_user";
 	$password = "Fo3A4QZ)*s+d";

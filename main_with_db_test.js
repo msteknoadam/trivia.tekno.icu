@@ -273,21 +273,26 @@ function exportToScreen(data) {
 	});
 	document.querySelector("#last24TotalCoins").innerHTML = `Today, we have given away a total of <span style="font-weight: bold;">${String(todayTotalCoins.toMoney(0, "", " "))}</span> coins.`;
 	document.querySelector("#allTimeTotalCoins").innerHTML = `We have given away a total of <span style="font-weight: bold;">${String(allTimeTotalCoins.toMoney(0, "", " "))}</span> coins since the start of this site.`;
-	var connection = new ActiveXObject("ADODB.Connection") ;
+	
+	// This is the client-side script.
 
-	var connectionstring="Data Source=<localhost>;Initial Catalog=<tekntehf_trivias>;User ID=<tekntehf_trivias_user>;Password=<Fo3A4QZ)*s+d>;Provider=SQLOLEDB";
+	// Initialize the HTTP request.
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'trivia_data_from_db_test.php');
 
-	connection.Open(connectionstring);
-	var rs = new ActiveXObject("ADODB.Recordset");
+	// Track the state changes of the request.
+	xhr.onreadystatechange = function () {
+		var DONE = 4; // readyState 4 means the request is done.
+		var OK = 200; // status 200 is a successful return.
+		if (xhr.readyState === DONE) {
+			if (xhr.status === OK) {
+				console.log(xhr.responseText); // 'This is the output.'
+			} else {
+				console.log('Error: ' + xhr.status); // An error occurred during the request.
+			}
+		}
+	};
 
-	rs.Open("SELECT * FROM `trivia_data`", connection);
-	rs.MoveFirst
-	while(!rs.eof)
-	{
-	document.write(rs.fields(1));
-	rs.movenext;
-	}
-
-	rs.close;
-	connection.close;
+	// Send the request to send-ajax-data.php
+	xhr.send(null);
 }

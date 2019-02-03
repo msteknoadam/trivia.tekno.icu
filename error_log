@@ -17,3 +17,8 @@
 [02-Feb-2019 11:20:33 America/New_York] PHP Notice:  Undefined index: winners in /home/tekntehf/trivia.tekno.icu/action.php on line 23
 [02-Feb-2019 11:20:33 America/New_York] PHP Notice:  Undefined index: chat in /home/tekntehf/trivia.tekno.icu/action.php on line 28
 [02-Feb-2019 11:20:33 America/New_York] PHP Notice:  Undefined index: total in /home/tekntehf/trivia.tekno.icu/action.php on line 33
+[02-Feb-2019 20:12:34 America/New_York] PHP Parse error:  syntax error, unexpected '.', expecting end of file in /home/tekntehf/trivia.tekno.icu/trivia_data_from_db_test.php on line 22
+[02-Feb-2019 20:12:40 America/New_York] PHP Parse error:  syntax error, unexpected '.', expecting end of file in /home/tekntehf/trivia.tekno.icu/trivia_data_from_db_test.php on line 22
+[02-Feb-2019 20:12:57 America/New_York] PHP Parse error:  syntax error, unexpected '.', expecting end of file in /home/tekntehf/trivia.tekno.icu/trivia_data_from_db_test.php on line 22
+[02-Feb-2019 20:13:08 America/New_York] PHP Parse error:  syntax error, unexpected '.', expecting end of file in /home/tekntehf/trivia.tekno.icu/trivia_data_from_db_test.php on line 22
+[02-Feb-2019 20:14:18 America/New_York] PHP Parse error:  syntax error, unexpected '.', expecting end of file in /home/tekntehf/trivia.tekno.icu/trivia-data-from-db-test.php on line 22

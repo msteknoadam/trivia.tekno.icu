@@ -25,16 +25,23 @@ Number.prototype.toMoney = function(decimals, decimal_sep, thousands_sep)
    return sign + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : ''); 
 }
 
-fetch("trivias.txt?dummy="+String(Number(new Date())))
-    .then((response) => {
-        response.text().then((data) => {
-        	//console.log(data);
-            window.trivias = data;
-			//document.querySelector("#latestTrivias").innerText = data;
-			exportToScreen(data);
-        });
-    })
-	.catch((err) => { console.log("Couldn't read the file. Please try again later.") });
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'trivia_data.php');
+
+xhr.onreadystatechange = function () {
+	var DONE = 4;
+	var OK = 200;
+	if (xhr.readyState === DONE) {
+		if (xhr.status === OK) {
+			window.trivias = xhr.responseText;
+			exportToScreen(xhr.responseText);
+		} else {
+			console.log('Error: ' + xhr.status);
+		}
+	}
+};
+
+xhr.send(null);
 
 var loadTime = Number(new Date()),
 	todayStatsTime = loadTime - 86400000,

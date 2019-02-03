@@ -25,16 +25,23 @@ Number.prototype.toMoney = function(decimals, decimal_sep, thousands_sep)
    return sign + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : ''); 
 }
 
-fetch("trivias.txt?dummy="+String(Number(new Date())))
-    .then((response) => {
-        response.text().then((data) => {
-        	//console.log(data);
-            window.trivias = data;
-			//document.querySelector("#latestTrivias").innerText = data;
-			exportToScreen(data);
-        });
-    })
-	.catch((err) => { console.log("Couldn't read the file. Please try again later.") });
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'trivia_data_from_db_test.php');
+
+xhr.onreadystatechange = function () {
+	var DONE = 4;
+	var OK = 200;
+	if (xhr.readyState === DONE) {
+		if (xhr.status === OK) {
+			window.trivias = xhr.responseText;
+			exportToScreen(xhr.responseText);
+		} else {
+			console.log('Error: ' + xhr.status);
+		}
+	}
+};
+
+xhr.send(null);
 
 var loadTime = Number(new Date()),
 	todayStatsTime = loadTime - 86400000,
@@ -273,27 +280,4 @@ function exportToScreen(data) {
 	});
 	document.querySelector("#last24TotalCoins").innerHTML = `Today, we have given away a total of <span style="font-weight: bold;">${String(todayTotalCoins.toMoney(0, "", " "))}</span> coins.`;
 	document.querySelector("#allTimeTotalCoins").innerHTML = `We have given away a total of <span style="font-weight: bold;">${String(allTimeTotalCoins.toMoney(0, "", " "))}</span> coins since the start of this site.`;
-	
-	// This is the client-side script.
-
-	// Initialize the HTTP request.
-	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'trivia_data_from_db_test.php');
-
-	// Track the state changes of the request.
-	xhr.onreadystatechange = function () {
-		var DONE = 4; // readyState 4 means the request is done.
-		var OK = 200; // status 200 is a successful return.
-		if (xhr.readyState === DONE) {
-			if (xhr.status === OK) {
-				console.log(xhr.responseText); // 'This is the output.'
-				document.querySelector("#testSpan").innerText = xhr.responseText;
-			} else {
-				console.log('Error: ' + xhr.status); // An error occurred during the request.
-			}
-		}
-	};
-
-	// Send the request to send-ajax-data.php
-	xhr.send(null);
 }

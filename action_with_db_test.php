@@ -48,7 +48,7 @@
 	$line = "\n" . $name . "-@-" . $question . "-@-" . $answer . "-@-" . $time . "-@-" . $winners . "-@-" . $chat . "-@-" . $total;
 	file_put_contents("trivias.txt", $line, FILE_APPEND);
 	$sql = "INSERT INTO trivia_data (name, question, answer, time, winners, chat, total)
-	VALUES ($name, $question, $answer, $time, $winners, $chat, $total)";
+	VALUES ('$name', '$question', '$answer', '$time', '$winners', '$chat', '$total')";
 	if (mysqli_query($conn, $sql)) {
 		echo "https://www.reddit.com/r/dataisbeautiful";
 	} else {

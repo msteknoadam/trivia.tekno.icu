@@ -18,20 +18,21 @@
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            echo "\n".
-            $row['name'].
-            "-@-".
-            $row['question'].
-            "-@-".
-            $row['answer'].
-            "-@-".
-            $row['time'].
-            "-@-".
-            $row['winners'].
-            "-@-".
-            $row['chat'].
-            "-@-".
-            $row['total'];
+            echo 
+                $row['name'].
+                "-@-".
+                $row['question'].
+                "-@-".
+                $row['answer'].
+                "-@-".
+                $row['time'].
+                "-@-".
+                $row['winners'].
+                "-@-".
+                $row['chat'].
+                "-@-".
+                $row['total'].
+                "\n";
         }
     } else {
         echo "0 results";

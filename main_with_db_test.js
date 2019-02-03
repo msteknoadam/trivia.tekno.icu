@@ -80,7 +80,7 @@ function exportToScreen(data) {
 						sortable.sort((a,b) => {
 							return b[1] - a[1];
 						});
-						if(trivia === trivias[trivias.length - 2]) sortedLeaderboard24Data = sortable;
+						sortedLeaderboard24Data = sortable;
 					}
 					var last24exists = false,
 						last24thIndex = 0;
@@ -168,7 +168,7 @@ function exportToScreen(data) {
 					sortable.sort((a,b) => {
 						return b[1] - a[1];
 					});
-					if(trivia === trivias[trivias.length - 2]) sortedLeaderboardAllTimeData = sortable;
+					sortedLeaderboardAllTimeData = sortable;
 					allTimeTotalCoins += Number(totalAmount);
 				}
 

@@ -13,13 +13,13 @@
     }
    
     $sql = "SELECT * FROM `trivia_data`";
-    
-    $retval = mysql_query( $sql, $conn );
+    mysqli_select_db('trivia_data');
+    $retval = mysqli_query( $sql, $conn );
     
     if(! $retval ) {
-       die('Could not get data: ' . mysql_error());
+       die('Could not get data: ' . mysqli_error());
     }
-    while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
+    while($row = mysqli_fetch_array($retval, MYSQL_ASSOC)) {
          echo "\n".
             $row['name'].
             "-@-".
@@ -36,6 +36,6 @@
             $row['total'];
     }
     
-     mysql_close($conn);
+     mysqli_close($conn);
     
 ?>

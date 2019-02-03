@@ -287,7 +287,7 @@ function exportToScreen(data) {
 		if (xhr.readyState === DONE) {
 			if (xhr.status === OK) {
 				console.log(xhr.responseText); // 'This is the output.'
-				document.write(xhr.responseText);
+				document.write(xhr.response);
 			} else {
 				console.log('Error: ' + xhr.status); // An error occurred during the request.
 			}

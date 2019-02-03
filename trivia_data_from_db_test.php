@@ -11,16 +11,14 @@
 	if (!$conn) {
 		die("Connection failed: " . mysqli_connect_error());
     }
-   
-    $sql = "SELECT * FROM `trivia_data`";
-    mysqli_select_db('trivia_data');
-    $retval = mysqli_query( $sql, $conn );
-    
-    if(! $retval ) {
-       die('Could not get data: ' . mysqli_error());
-    }
-    while($row = mysqli_fetch_array($retval, MYSQL_ASSOC)) {
-         echo "\n".
+
+    $sql = "SELECT name, question, answer, time, winners, chat, total FROM trivia_data";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo "\n".
             $row['name'].
             "-@-".
             $row['question'].
@@ -34,8 +32,10 @@
             $row['chat'].
             "-@-".
             $row['total'];
+        }
+    } else {
+        echo "0 results";
     }
-    
-     mysqli_close($conn);
+    $conn->close();
     
 ?>

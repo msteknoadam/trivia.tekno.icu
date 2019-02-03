@@ -11,7 +11,12 @@
 	if (!$conn) {
 		die("Connection failed: " . mysqli_connect_error());
     }
-
+    $lang_change = "SET NAMES utf8mb4";
+    if (mysqli_query($conn, $lang_change)) {
+        //echo "Successful: Language change. ";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
     $sql = "SELECT name, question, answer, time, winners, chat, total FROM trivia_data";
     $result = $conn->query($sql);
 

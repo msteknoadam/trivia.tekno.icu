@@ -13,7 +13,7 @@
     }
    
     $sql = "SELECT * FROM `trivia_data`";
-    mysql_select_db('trivia_data');
+    
     $retval = mysql_query( $sql, $conn );
     
     if(! $retval ) {

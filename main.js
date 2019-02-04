@@ -159,13 +159,11 @@ function exportToScreen(data) {
             "\n" +
             String(
               Number(
-                Number(
-                  document
-                    .querySelector("#last24modList")
-                    .querySelectorAll("th")
-                    [last24thIndex].innerText.split("\n")[1]
-                ) + totalAmount
-              )
+                document
+                  .querySelector("#last24modList")
+                  .querySelectorAll("th")
+                  [last24thIndex].innerText.split("\n")[1]
+              ) + Number(totalAmount)
             );
         } else {
           var th = document.createElement("th");
@@ -329,13 +327,11 @@ function exportToScreen(data) {
           "\n" +
           String(
             Number(
-              Number(
-                document
-                  .querySelector("#modList")
-                  .querySelectorAll("th")
-                  [thIndex].innerText.split("\n")[1]
-              ) + totalAmount
-            )
+              document
+                .querySelector("#modList")
+                .querySelectorAll("th")
+                [thIndex].innerText.split("\n")[1]
+            ) + Number(totalAmount)
           );
       } else {
         var th = document.createElement("th");

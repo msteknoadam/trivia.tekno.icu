@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
 		if(!is_nan(floatval($row['time'])) && !is_nan(floatval($row['total'])) && intval($row['total']) && intval($row['time']) > $timeLimit) {
 			if(intval($row['time'])) {
-				echo intval($row['time']) . "|" . $currentTime . "\n";
+				//echo intval($row['time']) . "|" . $currentTime . "\n";
 				$last24Total += intval($row['total']);
 			}
 		}
@@ -31,7 +31,12 @@ if ($result->num_rows > 0) {
 } else {
    echo "Found 0 last trivias.";
 }
-echo $last24Total;
+$insertData = "INSERT INTO `trivia_stats` (`id`, `last24Total`) VALUES (NULL, \'$last24Total\')";
+if (mysqli_query($conn, $insertData)) {
+	echo "Successfully inserted data: $last24Total";
+} else {
+	echo "Error. Please send this data to TEKNO: " . $sql . "<br>" . mysqli_error($conn);
+}
 $conn->close();
 	
 ?>

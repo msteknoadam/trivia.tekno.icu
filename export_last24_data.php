@@ -20,7 +20,7 @@ $sql = "SELECT name, question, answer, time, winners, chat, total FROM trivia_da
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
-		if(!is_nan(floatval($row['time'])) && !is_nan(floatval($row['total'])) && intval($row['total'])) {
+		if(!is_nan(floatval($row['time'])) && !is_nan(floatval($row['total'])) && intval($row['total']) && intval($row['time']) > $timeLimit) {
 			if(intval($row['time'])) {
 				$last24Total += intval($row['total']);
 			}

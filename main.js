@@ -152,12 +152,12 @@ function exportToScreen(data) {
           document
             .querySelector("#last24modList")
             .querySelectorAll("th")
-            [thIndex].innerText.split("\n")[1] = String(
+            [last24thIndex].innerText.split("\n")[1] = String(
             Number(
               document
                 .querySelector("#last24modList")
                 .querySelectorAll("th")
-                [thIndex].innerText.split("\n")[1]
+                [last24thIndex].innerText.split("\n")[1]
             ) + totalAmount
           );
         } else {
@@ -234,12 +234,12 @@ function exportToScreen(data) {
           document
             .querySelector("#last24modList")
             .querySelectorAll("th")
-            [thIndex].innerText.split("\n")[1] = String(
+            [last24thIndex].innerText.split("\n")[1] = String(
             Number(
               document
                 .querySelector("#last24modList")
                 .querySelectorAll("th")
-                [thIndex].innerText.split("\n")[1]
+                [last24thIndex].innerText.split("\n")[1]
             ) + totalAmount
           );
         }

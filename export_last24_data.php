@@ -22,6 +22,7 @@ if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
 		if(!is_nan(floatval($row['time'])) && !is_nan(floatval($row['total'])) && intval($row['total']) && intval($row['time']) > $timeLimit) {
 			if(intval($row['time'])) {
+				echo intval($row['time']);
 				$last24Total += intval($row['total']);
 			}
 		}

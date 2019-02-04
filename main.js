@@ -149,25 +149,19 @@ function exportToScreen(data) {
             .querySelector("#last24Trivias")
             .querySelectorAll("ul")
             [last24thIndex].appendChild(li);
-          document.querySelector("#last24modList").querySelectorAll("th")[
-            last24thIndex
-          ].innerText =
-            document
-              .querySelector("#last24modList")
-              .querySelectorAll("th")
-              [last24thIndex].innerText.split("\n")[0] +
-            "\n" +
-            String(
-              Number(
-                document
-                  .querySelector("#last24modList")
-                  .querySelectorAll("th")
-                  [last24thIndex].innerText.split("\n")[1]
-              ) + Number(totalAmount)
-            );
+          document
+            .querySelector("#last24modList")
+            .querySelectorAll("th")
+            [last24thIndex].querySelector(".total").innerText =
+            Number(
+              document
+                .querySelector("#last24modList")
+                .querySelectorAll("th")
+                [last24thIndex].querySelector(".total").innerText
+            ) + Number(totalAmount);
         } else {
           var th = document.createElement("th");
-          th.innerText = hoster + "\n" + String(totalAmount);
+          th.innerHTML = `${hoster}<br /><span class="total">${totalAmount}</span>`;
           document
             .querySelector("#last24Trivias")
             .querySelector("#last24modList")
@@ -317,25 +311,19 @@ function exportToScreen(data) {
           .querySelector("#latestTrivias")
           .querySelectorAll("ul")
           [thIndex].appendChild(li);
-        document.querySelector("#modList").querySelectorAll("th")[
-          thIndex
-        ].innerText =
-          document
-            .querySelector("#modList")
-            .querySelectorAll("th")
-            [thIndex].innerText.split("\n")[0] +
-          "\n" +
-          String(
-            Number(
-              document
-                .querySelector("#modList")
-                .querySelectorAll("th")
-                [thIndex].innerText.split("\n")[1]
-            ) + Number(totalAmount)
-          );
+        document
+          .querySelector("#modList")
+          .querySelectorAll("th")
+          [thIndex].querySelector(".total").innerText =
+          Number(
+            document
+              .querySelector("#modList")
+              .querySelectorAll("th")
+              [thIndex].querySelector(".total").innerText
+          ) + Number(totalAmount);
       } else {
         var th = document.createElement("th");
-        th.innerText = hoster + "\n" + String(totalAmount);
+        th.innerHTML = `${hoster}<br /><span class="total">${totalAmount}</span>`;
         document
           .querySelector("#latestTrivias")
           .querySelector("#modList")

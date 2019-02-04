@@ -149,10 +149,13 @@ function exportToScreen(data) {
             .querySelector("#last24Trivias")
             .querySelectorAll("ul")
             [last24thIndex].appendChild(li);
-          document
-            .querySelector("#last24modList")
-            .querySelectorAll("th")
-            [last24thIndex].innerText.split("\n")[0] +
+          document.querySelector("#last24modList").querySelectorAll("th")[
+            last24thIndex
+          ].innerText =
+            document
+              .querySelector("#last24modList")
+              .querySelectorAll("th")
+              [last24thIndex].innerText.split("\n")[0] +
             "\n" +
             String(
               Number(
@@ -233,17 +236,6 @@ function exportToScreen(data) {
             .querySelector("#last24Trivias")
             .querySelectorAll("ul")
             [last24thIndex].appendChild(li);
-          document
-            .querySelector("#last24modList")
-            .querySelectorAll("th")
-            [last24thIndex].innerText.split("\n")[1] = String(
-            Number(
-              document
-                .querySelector("#last24modList")
-                .querySelectorAll("th")
-                [last24thIndex].innerText.split("\n")[1]
-            ) + totalAmount
-          );
         }
       }
 
@@ -404,17 +396,6 @@ function exportToScreen(data) {
           .querySelector("#latestTrivias")
           .querySelectorAll("ul")
           [thIndex].appendChild(li);
-        document
-          .querySelector("#modList")
-          .querySelectorAll("th")
-          [thIndex].innerText.split("\n")[1] = String(
-          Number(
-            document
-              .querySelector("#modList")
-              .querySelectorAll("th")
-              [thIndex].innerText.split("\n")[1]
-          ) + totalAmount
-        );
       }
     }
   });

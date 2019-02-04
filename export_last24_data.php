@@ -1,7 +1,8 @@
 <?php
 
 header('Content-Type: text/plain; charset=UTF-8');
-$timeLimit = time() - 1 * 24 * 60 * 60 * 1000;
+$currentTime = time() * 1000;
+$timeLimit = $currentTime - 1 * 24 * 60 * 60 * 1000;
 $last24Total = 0;
 $servername = "localhost";
 $username = "tekntehf_trivias_user";
@@ -22,7 +23,7 @@ if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
 		if(!is_nan(floatval($row['time'])) && !is_nan(floatval($row['total'])) && intval($row['total']) && intval($row['time']) > $timeLimit) {
 			if(intval($row['time'])) {
-				echo intval($row['time']) . "|" . time() . "\n";
+				echo intval($row['time']) . "|" . $currentTime . "\n";
 				$last24Total += intval($row['total']);
 			}
 		}

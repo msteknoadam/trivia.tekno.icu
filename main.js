@@ -231,6 +231,17 @@ function exportToScreen(data) {
             .querySelector("#last24Trivias")
             .querySelectorAll("ul")
             [last24thIndex].appendChild(li);
+          document
+            .querySelector("#last24modList")
+            .querySelectorAll("th")
+            [thIndex].innerText.split("\n")[1] = String(
+            Number(
+              document
+                .querySelector("#last24modList")
+                .querySelectorAll("th")
+                [thIndex].innerText.split("\n")[1]
+            ) + totalAmount
+          );
         }
       }
 
@@ -313,12 +324,12 @@ function exportToScreen(data) {
           .querySelectorAll("ul")
           [thIndex].appendChild(li);
         document
-          .querySelector("#modlist")
+          .querySelector("#modList")
           .querySelectorAll("th")
           [thIndex].innerText.split("\n")[1] = String(
           Number(
             document
-              .querySelector("#modlist")
+              .querySelector("#modList")
               .querySelectorAll("th")
               [thIndex].innerText.split("\n")[1]
           ) + totalAmount
@@ -387,12 +398,12 @@ function exportToScreen(data) {
           .querySelectorAll("ul")
           [thIndex].appendChild(li);
         document
-          .querySelector("#modlist")
+          .querySelector("#modList")
           .querySelectorAll("th")
           [thIndex].innerText.split("\n")[1] = String(
           Number(
             document
-              .querySelector("#modlist")
+              .querySelector("#modList")
               .querySelectorAll("th")
               [thIndex].innerText.split("\n")[1]
           ) + totalAmount

@@ -152,14 +152,16 @@ function exportToScreen(data) {
           document
             .querySelector("#last24modList")
             .querySelectorAll("th")
-            [last24thIndex].innerText.split("\n")[1] = String(
-            Number(
-              document
-                .querySelector("#last24modList")
-                .querySelectorAll("th")
-                [last24thIndex].innerText.split("\n")[1]
-            ) + totalAmount
-          );
+            [last24thIndex].innerText.split("\n")[0] +
+            "\n" +
+            String(
+              Number(
+                document
+                  .querySelector("#last24modList")
+                  .querySelectorAll("th")
+                  [last24thIndex].innerText.split("\n")[1]
+              ) + totalAmount
+            );
         } else {
           var th = document.createElement("th");
           th.innerText = hoster + "\n" + String(totalAmount);
@@ -323,17 +325,22 @@ function exportToScreen(data) {
           .querySelector("#latestTrivias")
           .querySelectorAll("ul")
           [thIndex].appendChild(li);
-        document
-          .querySelector("#modList")
-          .querySelectorAll("th")
-          [thIndex].innerText.split("\n")[1] = String(
-          Number(
-            document
-              .querySelector("#modList")
-              .querySelectorAll("th")
-              [thIndex].innerText.split("\n")[1]
-          ) + totalAmount
-        );
+        document.querySelector("#modList").querySelectorAll("th")[
+          thIndex
+        ].innerText =
+          document
+            .querySelector("#modList")
+            .querySelectorAll("th")
+            [thIndex].innerText.split("\n")[0] +
+          "\n" +
+          String(
+            Number(
+              document
+                .querySelector("#modList")
+                .querySelectorAll("th")
+                [thIndex].innerText.split("\n")[1]
+            ) + totalAmount
+          );
       } else {
         var th = document.createElement("th");
         th.innerText = hoster + "\n" + String(totalAmount);

@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
 } else {
    echo "Found 0 last trivias.";
 }
-$insertData = "INSERT INTO `trivia_stats` (`id`, `last24Total`) VALUES (NULL, \'$last24Total\')";
+$insertData = "INSERT INTO `trivia_stats` (`id`, `last24Total`) VALUES (NULL, $last24Total)";
 if (mysqli_query($conn, $insertData)) {
 	echo "Successfully inserted data: $last24Total";
 } else {

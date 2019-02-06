@@ -28,6 +28,10 @@ table tr:nth-child(even) {
   background-color: #23232a;
 }
 
+td {
+  vertical-align: top;
+}
+
 td:nth-child(2) {
   text-align: center;
 }

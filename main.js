@@ -142,7 +142,7 @@ function exportToScreen(data) {
           var span = document.createElement("span");
           span.innerText = `Chat: ${chatName}\nQuestion: ${question}\nAnswer: ${answer}\nWinners: ${winners}\nTotal coins given out: ${totalAmount}`;
           div.append(span);
-          var triviaButtonDiv = document.createElement("triviaButtonDiv");
+          var triviaButtonDiv = document.createElement("div");
           triviaButtonDiv.className = "triviaButtonDiv";
           triviaButtonDiv.appendChild(last24button);
           triviaButtonDiv.appendChild(div);
@@ -222,7 +222,7 @@ function exportToScreen(data) {
           var span = document.createElement("span");
           span.innerText = `Chat: ${chatName}\nQuestion: ${question}\nAnswer: ${answer}\nWinners: ${winners}\nTotal coins given out: ${totalAmount}`;
           div.append(span);
-          var triviaButtonDiv = document.createElement("triviaButtonDiv");
+          var triviaButtonDiv = document.createElement("div");
           triviaButtonDiv.className = "triviaButtonDiv";
           triviaButtonDiv.appendChild(last24button);
           triviaButtonDiv.appendChild(div);
@@ -304,7 +304,7 @@ function exportToScreen(data) {
         var span = document.createElement("span");
         span.innerText = `Chat: ${chatName}\nQuestion: ${question}\nAnswer: ${answer}\nWinners: ${winners}\nTotal coins given out: ${totalAmount}`;
         div.append(span);
-        var triviaButtonDiv = document.createElement("triviaButtonDiv");
+        var triviaButtonDiv = document.createElement("div");
         triviaButtonDiv.className = "triviaButtonDiv";
         triviaButtonDiv.appendChild(button);
         triviaButtonDiv.appendChild(div);
@@ -376,7 +376,7 @@ function exportToScreen(data) {
         var span = document.createElement("span");
         span.innerText = `Chat: ${chatName}\nQuestion: ${question}\nAnswer: ${answer}\nWinners: ${winners}\nTotal coins given out: ${totalAmount}`;
         div.append(span);
-        var triviaButtonDiv = document.createElement("triviaButtonDiv");
+        var triviaButtonDiv = document.createElement("div");
         triviaButtonDiv.className = "triviaButtonDiv";
         triviaButtonDiv.appendChild(button);
         triviaButtonDiv.appendChild(div);

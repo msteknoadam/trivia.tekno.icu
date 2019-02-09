@@ -142,13 +142,14 @@ function exportToScreen(data) {
           var span = document.createElement("span");
           span.innerText = `Chat: ${chatName}\nQuestion: ${question}\nAnswer: ${answer}\nWinners: ${winners}\nTotal coins given out: ${totalAmount}`;
           div.append(span);
-          var li = document.createElement("li");
-          li.appendChild(last24button);
-          li.appendChild(div);
+          var triviaButtonDiv = document.createElement("triviaButtonDiv");
+          triviaButtonDiv.className = "triviaButtonDiv";
+          triviaButtonDiv.appendChild(last24button);
+          triviaButtonDiv.appendChild(div);
           document
             .querySelector("#last24Trivias")
-            .querySelectorAll("ul")
-            [last24thIndex].appendChild(li);
+            .querySelectorAll("td")
+            [last24thIndex].appendChild(triviaButtonDiv);
           document
             .querySelector("#last24modList")
             .querySelectorAll("th")
@@ -166,9 +167,7 @@ function exportToScreen(data) {
             .querySelector("#last24Trivias")
             .querySelector("#last24modList")
             .appendChild(th);
-          var td = document.createElement("td"),
-            ul = document.createElement("ul");
-          td.appendChild(ul);
+          var td = document.createElement("td");
           document
             .querySelector("#last24Trivias")
             .querySelector("#last24triviaList")
@@ -223,13 +222,14 @@ function exportToScreen(data) {
           var span = document.createElement("span");
           span.innerText = `Chat: ${chatName}\nQuestion: ${question}\nAnswer: ${answer}\nWinners: ${winners}\nTotal coins given out: ${totalAmount}`;
           div.append(span);
-          var li = document.createElement("li");
-          li.appendChild(last24button);
-          li.appendChild(div);
+          var triviaButtonDiv = document.createElement("triviaButtonDiv");
+          triviaButtonDiv.className = "triviaButtonDiv";
+          triviaButtonDiv.appendChild(last24button);
+          triviaButtonDiv.appendChild(div);
           document
             .querySelector("#last24Trivias")
-            .querySelectorAll("ul")
-            [last24thIndex].appendChild(li);
+            .querySelectorAll("td")
+            [last24thIndex].appendChild(triviaButtonDiv);
         }
       }
 
@@ -304,13 +304,14 @@ function exportToScreen(data) {
         var span = document.createElement("span");
         span.innerText = `Chat: ${chatName}\nQuestion: ${question}\nAnswer: ${answer}\nWinners: ${winners}\nTotal coins given out: ${totalAmount}`;
         div.append(span);
-        var li = document.createElement("li");
-        li.appendChild(button);
-        li.appendChild(div);
+        var triviaButtonDiv = document.createElement("triviaButtonDiv");
+        triviaButtonDiv.className = "triviaButtonDiv";
+        triviaButtonDiv.appendChild(button);
+        triviaButtonDiv.appendChild(div);
         document
           .querySelector("#latestTrivias")
-          .querySelectorAll("ul")
-          [thIndex].appendChild(li);
+          .querySelectorAll("td")
+          [thIndex].appendChild(triviaButtonDiv);
         document
           .querySelector("#modList")
           .querySelectorAll("th")
@@ -328,9 +329,7 @@ function exportToScreen(data) {
           .querySelector("#latestTrivias")
           .querySelector("#modList")
           .appendChild(th);
-        var td = document.createElement("td"),
-          ul = document.createElement("ul");
-        td.appendChild(ul);
+        var td = document.createElement("td");
         document
           .querySelector("#latestTrivias")
           .querySelector("#triviaList")
@@ -377,13 +376,14 @@ function exportToScreen(data) {
         var span = document.createElement("span");
         span.innerText = `Chat: ${chatName}\nQuestion: ${question}\nAnswer: ${answer}\nWinners: ${winners}\nTotal coins given out: ${totalAmount}`;
         div.append(span);
-        var li = document.createElement("li");
-        li.appendChild(button);
-        li.appendChild(div);
+        var triviaButtonDiv = document.createElement("triviaButtonDiv");
+        triviaButtonDiv.className = "triviaButtonDiv";
+        triviaButtonDiv.appendChild(button);
+        triviaButtonDiv.appendChild(div);
         document
           .querySelector("#latestTrivias")
-          .querySelectorAll("ul")
-          [thIndex].appendChild(li);
+          .querySelectorAll("td")
+          [thIndex].appendChild(triviaButtonDiv);
       }
     }
   });

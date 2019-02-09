@@ -112,6 +112,10 @@ table {
   color: #09d456;
 }
 
+.triviaButtonDiv {
+  padding: 2.5px 10px;
+}
+
 .triviaButton {
   width: 175px;
   border-radius: 0px;

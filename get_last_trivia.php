@@ -15,7 +15,7 @@ if (!mysqli_query($conn, $lang_change)) {
     //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     echo "There was an error. Please try again later.";
 }
-$sql = "SELECT name, question, answer, time, winners, chat, total FROM trivia_data ORDER BY id DESC LIMIT 1";
+$sql = "SELECT name, time, chat, total FROM trivia_data ORDER BY id DESC LIMIT 1";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {

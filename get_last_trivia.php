@@ -19,7 +19,7 @@ $sql = "SELECT name, time, chat, total FROM trivia_data ORDER BY id DESC LIMIT 1
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
-		echo "$row['chat']-@-$row['name']-@-$row['time']-@-$row['total']";
+		echo "$row['chat']\n$row['name']\n$row['time']\n$row['total']";
     }
 } else {
    //echo "Found 0 last trivias.";

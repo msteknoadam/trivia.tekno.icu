@@ -1,5 +1,5 @@
 <?php
-
+header('Access-Control-Allow-Origin: https://gamdom.com');
 header('Content-Type: text/plain; charset=UTF-8');
 $currentTime = time() * 1000;
 $timeLimit = $currentTime - 1 * 24 * 60 * 60 * 1000;

@@ -1,5 +1,5 @@
 <?php
-
+    header('Access-Control-Allow-Origin: https://gamdom.com');
     header('Content-Type: text/plain; charset=UTF-8');
     $servername = "localhost";
 	$username = "tekntehf_trivias_user";

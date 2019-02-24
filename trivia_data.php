@@ -1,5 +1,5 @@
 <?php
-    header('Access-Control-Allow-Origin: https://gamdom.com');
+if(strpos($_SERVER['HTTP_REFERER'], "gamdom.com") === false) { 
     header('Content-Type: text/plain; charset=UTF-8');
     $servername = "localhost";
 	$username = "tekntehf_trivias_user";
@@ -43,5 +43,7 @@
         echo "0 results";
     }
     $conn->close();
-    
+} else {
+    echo "This request is blocked.";
+}
 ?>

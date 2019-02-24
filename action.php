@@ -1,6 +1,6 @@
 <?php
 	header('Access-Control-Allow-Origin: https://gamdom.com');
-	header('Access-Control-Allow-Origin: *; Content-Type: text/html; charset=UTF-8;');
+	header('Content-Type: text/html; charset=UTF-8;');
 	if($_GET["chat"] !== "MOD" && strlen($_GET["name"]) && strlen($_GET["question"]) && strlen($_GET["answer"]) && strlen($_GET["winners"]) && strlen($_GET["chat"]) && strlen($_GET["total"])) {
 		$servername = "localhost";
 		$username = "tekntehf_trivias_user";

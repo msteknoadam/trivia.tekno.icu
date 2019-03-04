@@ -1,5 +1,5 @@
 <?php
-    if($_SERVER['HTTP_ORIGIN'] === "https://trivia.tekno.icu") {
+    if($_SERVER['HTTP_ORIGIN'] === "https://tekno.icu") {
         header('Content-Type: text/plain; charset=UTF-8');
         $servername = "localhost";
         $username = "tekntehf_trivias_user";

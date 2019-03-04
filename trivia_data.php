@@ -1,5 +1,6 @@
 <?php
-    if($_SERVER['HTTP_ORIGIN'] === "https://tekno.icu") {
+    //if($_SERVER['HTTP_ORIGIN'] === "https://tekno.icu") {
+        echo $_SERVER['HTTP_ORIGIN'];
         header('Content-Type: text/plain; charset=UTF-8');
         $servername = "localhost";
         $username = "tekntehf_trivias_user";
@@ -43,7 +44,7 @@
             echo "0 results";
         }
         $conn->close();
-    } else {
+    /*} else {
         echo "This page can only be accessed from trivia.tekno.icu"
-    }
+    }*/
 ?>

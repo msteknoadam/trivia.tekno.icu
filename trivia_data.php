@@ -1,5 +1,5 @@
 <?php
-    if(!strpos($_SERVER['HTTP_REFERER'], "gamdom.com")) { 
+    if($_SERVER['HTTP_REFERER'] === "https://trivia.tekno.icu/") { 
         header('Content-Type: text/plain; charset=UTF-8');
         $servername = "localhost";
         $username = "tekntehf_trivias_user";

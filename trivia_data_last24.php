@@ -22,21 +22,8 @@
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            echo 
-                $row['name'].
-                "-@-".
-                $row['question'].
-                "-@-".
-                $row['answer'].
-                "-@-".
-                $row['time'].
-                "-@-".
-                $row['winners'].
-                "-@-".
-                $row['chat'].
-                "-@-".
-                $row['total'].
-                "\n";
+            $trivia = array ("hoster" => $row['name'], "question" => $row['question'], "answer" => $row['answer'], "timeStamp" => $row['time'], "winners" => $row['winners'], "chatName" => $row['chat'], "totalAmount" => $row['total']);
+            echo json_encode($trivia);
         }
     } else {
         echo "0 results";

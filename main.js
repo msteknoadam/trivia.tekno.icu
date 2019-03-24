@@ -29,8 +29,8 @@ fetch('trivia_data_last24.php')
 		return response.json();
 	})
 	.then(data => {
-		window.trivias = data;
-		exportToScreen(data);
+		window.last24Trivias = data;
+		exportLast24ToScreen(data);
 	});
 
 /* Loadtime will be used to determine last 24 hours etc. for last 24 hour stats. */
@@ -39,7 +39,7 @@ var loadTime = Number(new Date()),
 	todayTotalCoins = 0,
 	allTimeTotalCoins = 0;
 
-function exportToScreen(data) {
+function exportLast24ToScreen(data) {
 	/* Defining global variables */
 	var leaderboard24Data = {},
 		sortedLeaderboard24Data = [];

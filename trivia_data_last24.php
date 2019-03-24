@@ -5,6 +5,7 @@
     $password = "Fo3A4QZ)*s+d";
     $dbname = "tekntehf_trivias";
     $minTimeStamp = (time() * 1000) - (24 * 60 * 60 * 1000);
+    $trivias = array();
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     // Check connection
@@ -23,10 +24,11 @@
         // output data of each row
         while($row = $result->fetch_assoc()) {
             $trivia = array ("hoster" => $row['name'], "question" => $row['question'], "answer" => $row['answer'], "timeStamp" => $row['time'], "winners" => $row['winners'], "chatName" => $row['chat'], "totalAmount" => $row['total']);
-            echo json_encode($trivia) + "\n";
+            array_push($trivias, $trivia);
         }
     } else {
         echo "0 results";
     }
     $conn->close();
+    echo json_encode($trivias);
 ?>

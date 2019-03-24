@@ -75,6 +75,7 @@ function exportToScreen(data) {
 					answer: answer,
 					timeStamp: timeStamp,
 					winners: winners,
+					chatName: chatName,
 					totalAmount: totalAmount,
 				},
 				winnersArray = winners.split(',');

@@ -5,6 +5,7 @@
     $password = "Fo3A4QZ)*s+d";
     $dbname = "tekntehf_trivias";
     $minTimeStamp = microtime() - (24 * 60 * 60 * 1000);
+    echo $minTimeStamp;
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     // Check connection

@@ -65,6 +65,7 @@ function updateAllTimeLeaderboard() {
 				tr.prepend(tdUsername);
 				document.querySelector('#leaderboardAllTime').append(tr);
 			});
+			window.allTimeLeaderboard = sortedLeaderboardAllTimeData;
 		});
 }
 

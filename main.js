@@ -85,9 +85,12 @@ function exportToScreen(data) {
 				todayTotalCoins += Number(totalAmount);
 				if (!isNaN(totalAmount)) {
 					winnersArray.forEach(winner => {
-						if (leaderboard24Data[winner]) leaderboard24Data[winner] += totalAmount / winnersArray.length;
+						/* If the user has already won a trivia, add the current trivia's reward to user's previous amount. Otherwise, create a new object key-value pair for that user. */
+						if (leaderboard24Data[winner])
+							leaderboard24Data[winner] += Math.floor(totalAmount / winnersArray.length);
+						// Using floor so it will prevent retarded numbers (tho this is not how it should be)
 						else {
-							leaderboard24Data[winner] = totalAmount / winnersArray.length;
+							leaderboard24Data[winner] = Math.floor(totalAmount / winnersArray.length); // Using floor so it will prevent retarded numbers (tho this is not how it should be)
 						}
 					});
 					var sortable = [];
@@ -217,10 +220,12 @@ function exportToScreen(data) {
 			if (!isNaN(totalAmount)) {
 				winnersArray.forEach(winner => {
 					/* Adding user to the all time leaderboard data with username so we can access with username directly */
+					/* If the user has already won a trivia, add the current trivia's reward to user's previous amount. Otherwise, create a new object key-value pair for that user. */
 					if (leaderboardAllTimeData[winner])
-						leaderboardAllTimeData[winner] += totalAmount / winnersArray.length;
+						leaderboardAllTimeData[winner] += Math.floor(totalAmount / winnersArray.length);
+					// Using floor so it will prevent retarded numbers (tho this is not how it should be)
 					else {
-						leaderboardAllTimeData[winner] = totalAmount / winnersArray.length;
+						leaderboardAllTimeData[winner] = Math.floor(totalAmount / winnersArray.length); // Using floor so it will prevent retarded numbers (tho this is not how it should be)
 					}
 				});
 				/* Sorting leaderboard data */

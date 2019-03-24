@@ -42,7 +42,7 @@ var loadTime = Number(new Date()),
 	todayTotalCoins = 0,
 	allTimeTotalCoins = 0;
 
-function exportLast24ToScreen(data) {
+function exportLast24ToScreen(trivias) {
 	/* Defining global variables */
 	var leaderboard24Data = {},
 		sortedLeaderboard24Data = [];

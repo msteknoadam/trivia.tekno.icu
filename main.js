@@ -215,13 +215,13 @@ function exportLast24ToScreen(trivias) {
 }
 
 function showAllTime() {
-	if (!window.allTimeTrivias) {
+	if (!window.allTimeTriviaDatas) {
 		fetch('trivia_data_alltime.php')
 			.then(response => {
 				return response.json();
 			})
 			.then(data => {
-				window.allTimeTrivias = data;
+				window.allTimeTriviaDatas = data;
 				exportAllTimeToScreen(data);
 			});
 	}

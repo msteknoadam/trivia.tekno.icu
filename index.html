@@ -50,6 +50,9 @@
 							onclick='
 							document.querySelector("#leaderboardAllTimeDiv").style.display = "";
 							document.querySelector("#leaderboard24Div").style.display = "none";
+							if(!window.allTimeLeaderboard) {
+								updateAllTimeLeaderboard();
+							}
 						'
 							class="clickable_link"
 							>Last 24 Hours</span

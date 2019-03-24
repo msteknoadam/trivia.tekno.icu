@@ -39,6 +39,35 @@ fetch('all_time_total_amount.php')
 		)}</span> coins since the start of this site.`;
 	});
 
+/* Function to update all time leaderboard */
+function updateAllTimeLeaderboard() {
+	fetch('https://trivia.tekno.icu/all_time_leaderboard.php')
+		.then(response => {
+			return response.json();
+		})
+		.then(data => {
+			var sortable = [];
+			for (var user in data) {
+				sortable.push([user, data[user]]);
+			}
+			sortable.sort((a, b) => {
+				return b[1] - a[1];
+			});
+			sortedLeaderboardAllTimeData = sortable;
+			sortedLeaderboardAllTimeData.forEach(userData => {
+				var tr = document.createElement('tr'),
+					tdUsername = document.createElement('td'),
+					tdCoinsWon = document.createElement('td');
+
+				tdUsername.innerText = userData[0];
+				tdCoinsWon.innerText = String(userData[1]);
+				tr.append(tdCoinsWon);
+				tr.prepend(tdUsername);
+				document.querySelector('#leaderboardAllTime').append(tr);
+			});
+		});
+}
+
 /* Getting trivia datas from the database */
 fetch('trivia_data_last24.php')
 	.then(response => {
@@ -388,18 +417,5 @@ function exportAllTimeToScreen(trivias) {
 			}
 			/* Calculation of all time trivias END */
 		}
-	});
-
-	/* Add the sorted datas into the actual HTML page */
-	sortedLeaderboardAllTimeData.forEach(userData => {
-		var tr = document.createElement('tr'),
-			tdUsername = document.createElement('td'),
-			tdCoinsWon = document.createElement('td');
-
-		tdUsername.innerText = userData[0];
-		tdCoinsWon.innerText = String(userData[1]);
-		tr.append(tdCoinsWon);
-		tr.prepend(tdUsername);
-		document.querySelector('#leaderboardAllTime').append(tr);
 	});
 }

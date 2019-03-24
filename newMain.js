@@ -46,7 +46,7 @@ function exportToScreen(data) {
 
 	/* Processing each trivia */
 	trivias.forEach(function(trivia) {
-		if (keys(trivia).length == 7) {
+		if (Object.keys(trivia).length == 7) {
 			/* Calculation of last 24 hour trivias START */
 			if (Number(trivia.timeStamp) > todayStatsTime) {
 				todayTotalCoins += Number(trivia.totalAmount);

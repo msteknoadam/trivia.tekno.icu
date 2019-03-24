@@ -23,7 +23,7 @@
         // output data of each row
         while($row = $result->fetch_assoc()) {
             $trivia = array ("hoster" => $row['name'], "question" => $row['question'], "answer" => $row['answer'], "timeStamp" => $row['time'], "winners" => $row['winners'], "chatName" => $row['chat'], "totalAmount" => $row['total']);
-            echo json_encode($trivia);
+            echo json_encode($trivia) + "\n";
         }
     } else {
         echo "0 results";

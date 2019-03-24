@@ -4,6 +4,7 @@
     $username = "tekntehf_trivias_user";
     $password = "Fo3A4QZ)*s+d";
     $dbname = "tekntehf_trivias";
+    $trivias = array();
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     // Check connection
@@ -21,24 +22,12 @@
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            echo 
-                $row['name'].
-                "-@-".
-                $row['question'].
-                "-@-".
-                $row['answer'].
-                "-@-".
-                $row['time'].
-                "-@-".
-                $row['winners'].
-                "-@-".
-                $row['chat'].
-                "-@-".
-                $row['total'].
-                "\n";
+            $trivia = array ("hoster" => $row['name'], "question" => $row['question'], "answer" => $row['answer'], "timeStamp" => $row['time'], "winners" => $row['winners'], "chatName" => $row['chat'], "totalAmount" => $row['total']);
+            array_push($trivias, $trivia);
         }
     } else {
         echo "0 results";
     }
     $conn->close();
+    echo json_encode($trivias);
 ?>

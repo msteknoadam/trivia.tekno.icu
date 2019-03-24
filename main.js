@@ -387,6 +387,6 @@ function exportAllTimeToScreen(trivias) {
 		tdCoinsWon.innerText = String(userData[1]);
 		tr.append(tdCoinsWon);
 		tr.prepend(tdUsername);
-		document.querySelector('#leaderboard24').append(tr);
+		document.querySelector('#leaderboardAllTime').append(tr);
 	});
 }

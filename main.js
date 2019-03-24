@@ -214,7 +214,7 @@ function exportLast24ToScreen(trivias) {
 	)}</span> coins.`;
 }
 
-document.querySelector('#previousShow').addEventListener('click', e => {
+function showAllTime(e) {
 	e.preventDefault();
 	if (!window.allTimeTrivias) {
 		fetch('trivia_data_alltime.php')
@@ -226,7 +226,8 @@ document.querySelector('#previousShow').addEventListener('click', e => {
 				exportAllTimeToScreen(data);
 			});
 	}
-});
+}
+window.showAllTime = showAllTime;
 
 function exportAllTimeToScreen(trivias) {
 	/* Defining global variables */

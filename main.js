@@ -60,7 +60,7 @@ function updateAllTimeLeaderboard() {
 					tdCoinsWon = document.createElement('td');
 
 				tdUsername.innerText = userData[0];
-				tdCoinsWon.innerText = String(userData[1]);
+				tdCoinsWon.innerText = String(Math.floor(userData[1]));
 				tr.append(tdCoinsWon);
 				tr.prepend(tdUsername);
 				document.querySelector('#leaderboardAllTime').append(tr);
@@ -273,8 +273,7 @@ window.showAllTime = showAllTime;
 
 function exportAllTimeToScreen(trivias) {
 	/* Defining global variables */
-	var leaderboardAllTimeData = {},
-		sortedLeaderboardAllTimeData = [];
+	var leaderboardAllTimeData = {};
 
 	/* Processing each trivia */
 	trivias.forEach(function(trivia) {
@@ -292,14 +291,6 @@ function exportAllTimeToScreen(trivias) {
 						leaderboardAllTimeData[winner] = Math.floor(trivia.totalAmount / winnersArray.length); // Using floor so it will prevent retarded numbers (tho this is not how it should be)
 					}
 				});
-				var sortable = [];
-				for (var user in leaderboardAllTimeData) {
-					sortable.push([user, leaderboardAllTimeData[user]]);
-				}
-				sortable.sort((a, b) => {
-					return b[1] - a[1];
-				});
-				sortedLeaderboardAllTimeData = sortable;
 			}
 			var allTimeexists = false,
 				allTimethIndex = 0;

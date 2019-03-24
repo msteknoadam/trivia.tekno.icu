@@ -228,7 +228,7 @@ document.querySelector('#previousShow').addEventListener('click', e => {
 	}
 });
 
-function exportAllTimeToScreen(data) {
+function exportAllTimeToScreen(trivias) {
 	/* Defining global variables */
 	var leaderboardAllTimeData = {},
 		sortedLeaderboardAllTimeData = [];

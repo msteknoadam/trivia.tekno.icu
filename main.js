@@ -26,6 +26,19 @@ Number.prototype.toMoney = function(decimals, decimal_sep, thousands_sep) {
 window.renderedLast24Mods = [];
 window.renderedAllTimeMods = [];
 
+/* Adding all time total amount to page */
+fetch('all_time_total_amount.php')
+	.then(response => {
+		return response.text();
+	})
+	.then(data => {
+		document.querySelector(
+			'#allTimeTotalCoins'
+		).innerHTML = `We have given away a total of <span style="font-weight: bold;">${String(
+			Number(data).toMoney(0, '', ' ')
+		)}</span> coins since the start of this site.`;
+	});
+
 /* Getting trivia datas from the database */
 fetch('trivia_data_last24.php')
 	.then(response => {

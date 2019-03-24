@@ -214,8 +214,7 @@ function exportLast24ToScreen(trivias) {
 	)}</span> coins.`;
 }
 
-function showAllTime(e) {
-	e.preventDefault();
+function showAllTime() {
 	if (!window.allTimeTrivias) {
 		fetch('trivia_data_alltime.php')
 			.then(response => {

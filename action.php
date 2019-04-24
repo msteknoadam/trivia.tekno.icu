@@ -12,16 +12,16 @@
 		if (!$conn) {
 			die("Connection failed: " . mysqli_connect_error());
 		}
-		$name = $_GET["name"];
-		$question = $_GET["question"];
-		$answer = $_GET["answer"];
-		$winners = $_GET["winners"];
-		$chat = $_GET["chat"];
-		$total = $_GET["total"];
+		$name = str_replace('"', "&#34;", str_replace("'", "&#39;", $_GET["name"]));
+		$question = str_replace('"', "&#34;", str_replace("'", "&#39;", $_GET["question"]));
+		$answer = str_replace('"', "&#34;", str_replace("'", "&#39;", $_GET["answer"]));
+		$winners = str_replace('"', "&#34;", str_replace("'", "&#39;", $_GET["winners"]));
+		$chat = str_replace('"', "&#34;", str_replace("'", "&#39;", $_GET["chat"]));
+		$total = str_replace('"', "&#34;", str_replace("'", "&#39;", $_GET["total"]));
 		if(strlen($_GET["time"]) < 1) {
 			$time = date_timestamp_get(date_create());
 		} else {
-			$time = $_GET["time"];
+			$time = str_replace('"', "&#34;", str_replace("'", "&#39;", $_GET["time"]));
 		}
 		$line = $name . "-@-" . $question . "-@-" . $answer . "-@-" . $time . "-@-" . $winners . "-@-" . $chat . "-@-" . $total;
 		$lang_change = "SET NAMES utf8";

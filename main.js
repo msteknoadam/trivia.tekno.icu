@@ -23,6 +23,15 @@ Number.prototype.toMoney = function(decimals, decimal_sep, thousands_sep) {
 	);
 };
 
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
+
+String.prototype.removeSpecialChars = function() {
+	return this.replaceAll('&#34;', '"').replaceAll('&#39;', "'");
+}
+
 window.renderedLast24Mods = [];
 window.renderedAllTimeMods = [];
 
@@ -151,9 +160,9 @@ function exportLast24ToScreen(trivias) {
 					var div = document.createElement('div');
 					div.className = 'triviaDetail hidden';
 					var span = document.createElement('span');
-					span.innerText = `Chat: ${trivia.chatName}\nQuestion: ${trivia.question}\nAnswer: ${
-						trivia.answer
-					}\nWinners: ${trivia.winners}\nTotal coins given out: ${trivia.totalAmount}`;
+					span.innerText = `Chat: ${trivia.chatName.removeSpecialChars()}\nQuestion: ${trivia.question.removeSpecialChars()}\nAnswer: ${
+						trivia.answer.removeSpecialChars()
+					}\nWinners: ${trivia.winners.removeSpecialChars()}\nTotal coins given out: ${trivia.totalAmount.removeSpecialChars()}`;
 					div.append(span);
 					var triviaButtonDiv = document.createElement('div');
 					triviaButtonDiv.className = 'triviaButtonDiv';
@@ -218,9 +227,9 @@ function exportLast24ToScreen(trivias) {
 					var div = document.createElement('div');
 					div.className = 'triviaDetail hidden';
 					var span = document.createElement('span');
-					span.innerText = `Chat: ${trivia.chatName}\nQuestion: ${trivia.question}\nAnswer: ${
-						trivia.answer
-					}\nWinners: ${trivia.winners}\nTotal coins given out: ${trivia.totalAmount}`;
+					span.innerText = `Chat: ${trivia.chatName.removeSpecialChars()}\nQuestion: ${trivia.question.removeSpecialChars()}\nAnswer: ${
+						trivia.answer.removeSpecialChars()
+					}\nWinners: ${trivia.winners.removeSpecialChars()}\nTotal coins given out: ${trivia.totalAmount.removeSpecialChars()}`;
 					div.append(span);
 					var triviaButtonDiv = document.createElement('div');
 					triviaButtonDiv.className = 'triviaButtonDiv';

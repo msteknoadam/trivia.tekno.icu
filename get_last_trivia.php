@@ -1,5 +1,4 @@
 <?php
-header('Access-Control-Allow-Origin: https://gamdom.com');
 header('Content-Type: text/plain; charset=UTF-8;');
 if($_GET["secret"] === ",yD:n]kDu7Z?zjn<") {
     $servername = "localhost";

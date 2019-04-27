@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 header('Content-Type: text/plain; charset=UTF-8;');
 if($_GET["secret"] === ",yD:n]kDu7Z?zjn<") {
     $servername = "localhost";
